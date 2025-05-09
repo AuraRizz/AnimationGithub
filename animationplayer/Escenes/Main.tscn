@@ -14,7 +14,7 @@ tracks/0/path = NodePath("Sprite2D:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 2.01, 3.01, 3.96667),
+"times": PackedFloat32Array(0, 1, 2.01, 3.01, 3.93333),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(80, 106), Vector2(862, 180), Vector2(637, 408), Vector2(172, 214), Vector2(80, 106)]
@@ -26,7 +26,7 @@ tracks/1/path = NodePath("Sprite2D:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1, 2, 3.01, 4),
+"times": PackedFloat32Array(0, 1, 2, 3.01, 3.93333),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [0.0, 0.796076, -3.61509, 0.877607, 0.00245667]
@@ -38,10 +38,10 @@ tracks/2/path = NodePath("Sprite2D:self_modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.966667, 2, 2.96667, 4),
+"times": PackedFloat32Array(0, 0.966667, 2, 2.96667, 3.93333),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.0980392), Color(1, 1, 1, 1), Color(1, 1, 1, 0.152941), Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 0.0313726), Color(1, 1, 1, 1), Color(1, 1, 1, 0.117647), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_mwxei"]
@@ -94,6 +94,7 @@ _data = {
 script = ExtResource("1_mwxei")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.0313726)
 position = Vector2(80, 106)
 scale = Vector2(0.494253, 0.494253)
 texture = ExtResource("1_p8wuh")
@@ -110,6 +111,9 @@ offset_top = 53.0
 offset_right = 1024.0
 offset_bottom = 84.0
 text = "CLICA AQUÍ PER VEURE UNA ANIMACIÖ"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(500, 300)
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
